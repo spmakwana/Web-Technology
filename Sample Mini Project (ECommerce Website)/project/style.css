@@ -1,0 +1,79 @@
+* {
+  font-family: "Encode Sans";
+}
+
+html {
+  font-size: 22px;
+  color: darkslategrey;
+}
+
+.registration-table {
+  margin: auto;
+}
+
+.registration-table td {
+  padding: 5px 25px;
+}
+
+.registration-table input {
+  border: 1px solid rgb(69, 97, 168);
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 22px;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 15%;
+  padding: 2em;
+  background-color: aliceblue;
+  border: 1px solid darkslategrey;
+  border-radius: 1em;
+  margin: 1em;
+  min-width: 300px;
+}
+
+.product-image {
+  width: 100%;
+}
+
+.product-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.product-price {
+  font-weight: bold;
+}
+
+.add-to-cart-button {
+  background-color: #143e9b;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.product-table th {
+  background-color: lightgray;
+}
+.product-table td,
+.product-table th {
+  border: 2px solid slategray;
+  padding: 0.5em 1em;
+}
+
+.product-table img {
+  height: 100px;
+  width: auto;
+}

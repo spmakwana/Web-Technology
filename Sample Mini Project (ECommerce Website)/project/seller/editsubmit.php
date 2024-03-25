@@ -1,0 +1,34 @@
+<?php
+session_start();
+if(isset($_POST["productname"]))
+{
+	$productname = $_POST["productname"];
+	$description = $_POST["description"];
+	$price = $_POST["price"];
+	$imagepath = "";
+	$pid = $_POST["pid"];
+	// Validation
+	require_once("../connection.php");
+
+	$target_dir = "../images/"; // Specify the directory where the file will be placed
+	$target_file = $target_dir . basename($_FILES["imagefile"]["name"]); // Path of the file to be uploaded
+	$imagepath = $_FILES["imagefile"]["name"];
+    $check = getimagesize($_FILES["imagefile"]["tmp_name"]);
+    if ($check !== false) {
+        move_uploaded_file($_FILES["imagefile"]["tmp_name"], $target_file);
+    }
+
+	echo $query = "update product set productname='$productname', description='$description', price='$price', image='$imagepath' where productid = '$pid'";
+
+	try
+	{
+		$con->query($query);
+		$_SESSION["message"] = "Product is updated Successfully";
+		header("location: product.php");
+	}
+	catch(Exception $e)
+	{
+		echo "Some error occured. Please try again";
+	}
+}
+?>
