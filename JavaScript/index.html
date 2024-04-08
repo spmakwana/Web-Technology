@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Page Title</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ullam velit ab quae consequuntur earum consectetur voluptatem ex, labore fuga odit nesciunt vero magni, porro obcaecati, repudiandae veniam temporibus? Dolores.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit accusamus commodi veniam tenetur! Amet necessitatibus, architecto aperiam eligendi maxime eos harum. Quasi quos eaque ut! Quis itaque asperiores quo sunt.</p>
+    <h2>Page sub Title</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus perferendis id consectetur, porro, aut itaque voluptatem molestiae necessitatibus vero odio ut incidunt temporibus nesciunt, aliquam blanditiis laborum aperiam eos error!</p>
+    <p id="viewmore">View More</p>
+    <div id="viewmorecontent" style="display: none">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores debitis non inventore aspernatur! Rem explicabo, quas atque nemo quidem voluptatibus? Ratione in iste aut vel inventore fugit deleniti explicabo eum!</p>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum corrupti debitis quibusdam molestias expedita mollitia quasi ipsa repudiandae ipsum explicabo reiciendis consectetur omnis ab neque, adipisci aut nemo veniam. Facere?</p>
+      <h2>Sub Title 2</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat animi non maiores pariatur amet sit magnam necessitatibus distinctio aliquid, officia totam iure, rerum beatae asperiores nisi molestiae velit nihil dolorem.</p>
+    </div>
+
+    <p id="longparagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint itaque doloribus deserunt expedita debitis, magni quidem similique temporibus quia inventore eius, molestias quisquam velit earum! Reiciendis, est neque. Neque esse accusantium numquam ad reprehenderit iusto maiores nemo quae consectetur libero voluptate quisquam suscipit, minima explicabo at fugit laborum odit expedita facilis voluptas placeat cum laudantium? Provident rem, iusto error consequatur obcaecati architecto animi aut asperiores consectetur qui neque sed. Consectetur accusantium voluptates voluptatem recusandae sint voluptatibus sed fuga nihil perspiciatis quibusdam. Vitae aliquid numquam vero quo, ipsum odit, magnam at nobis assumenda dolor, molestias eos? Quod ipsa labore earum aspernatur nihil in expedita accusamus, exercitationem consequatur! Assumenda eaque nisi, qui vitae recusandae nemo, ratione temporibus, rerum voluptate hic quasi. Asperiores molestias pariatur architecto porro magni accusantium illum optio tempora et! Dolorem asperiores debitis qui voluptatibus iusto eveniet nam reiciendis, excepturi aspernatur eius, modi perferendis consequatur quod autem quam voluptas veniam laborum nulla tenetur! Aperiam aliquam expedita eius culpa suscipit voluptatum consequatur cumque. Molestias ullam laborum iure! Enim ea cumque provident asperiores vel deserunt maxime repellat earum ut deleniti commodi at blanditiis alias, quasi neque delectus et nam nesciunt amet non aperiam. Quia explicabo earum quasi inventore omnis facere vero, sapiente sunt, totam deleniti sequi labore deserunt. Praesentium inventore autem a aperiam tenetur recusandae modi beatae quo, vitae nostrum amet nemo ut voluptatem quisquam odio quam et quod at officiis laboriosam illo libero? Dolores ab quod blanditiis soluta alias officia repellat, ea quo rem a necessitatibus quia corrupti tenetur sint itaque?</p>
+    <button id="b1">Align Left</button>
+    <button id="b2">Align right</button>
+    <button id="b3">Align center</button>
+    <button id="b4">Align justify</button>
+    <button id="b5">Change Content (Text)</button>
+    <button id="b6">Change Content (HTML)</button>
+    <br />
+    <img src="Animal.jpg" id="img1" alt="" style="height: 100px" />
+    <img src="Animal.jpg" id="img2" alt="" style="height: 100px" />
+    <script>
+      document.write("hello world");
+      document.write("<h1>Hello</h1>");
+      console.log("hello");
+
+
+
+
+      // Events
+      // blur		-	An element loses focus
+      // change		-	The content of a form element has changed
+      // click		-	An element is clicked on
+      // dblclick	-	An element is double-clicked
+      // focus		-	An element gets focus
+      // focusin	-	An element is about to get focus
+      // focusout	-	An element is about to lose focus
+      // mouseover	-	The pointer is moved onto an element
+      // onsubmit   -   When form is submitted
+
+
+
+
+      e1 = document.getElementById("viewmore");
+        e1.addEventListener("click", function () {
+        e2 = document.getElementById("viewmorecontent");
+        if (e2.style.display == "none") {
+          e2.style.display = "block";
+        } else {
+          e2.style.display = "none";
+        }
+      });
+
+      document.getElementById("b1").addEventListener("click", function () {
+        document.getElementById("longparagraph").setAttribute("align", "left");
+      });
+
+      document.getElementById("b2").addEventListener("click", function () {
+        document.getElementById("longparagraph").setAttribute("align", "right");
+      });
+
+      document.getElementById("b3").addEventListener("click", function () {
+        document.getElementById("longparagraph").setAttribute("align", "center");
+      });
+
+      document.getElementById("b4").addEventListener("click", function () {
+        document.getElementById("longparagraph").setAttribute("align", "justify");
+      });
+
+      document.getElementById("b5").addEventListener("click", function () {
+        document.getElementById("longparagraph").innerText = "<strong>This is new updated paragraph</strong>";
+      });
+
+      document.getElementById("b6").addEventListener("click", function () {
+        document.getElementById("longparagraph").innerHTML = "<strong>This is new updated paragraph</strong>";
+      });
+
+      document.getElementById("img1").addEventListener("mouseover", function () {
+        document.getElementById("img1").style.height = "200px";
+      });
+
+      document.getElementById("img1").addEventListener("mouseout", function () {
+        document.getElementById("img1").style.height = "100px";
+      });
+
+      document.getElementById("img2").addEventListener("mouseover", function () {
+        document.getElementById("img2").setAttribute("src", "Animal2.jpeg");
+      });
+
+      document.getElementById("img2").addEventListener("mouseout", function () {
+        document.getElementById("img2").setAttribute("src", "Animal.jpg");
+      });
+    </script>
+  </body>
+</html>
